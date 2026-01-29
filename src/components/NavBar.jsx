@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../css/navbar.css";
 import assets from "../assets/assets";
 
@@ -27,6 +27,23 @@ function NavBar( {theme, setTheme }) {
   ];
 
   const [sideBar,setSideBar]=useState(false)
+
+
+  useEffect(()=>{
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark')
+    }
+    else{
+      document.documentElement.classList.add('light')
+    }
+    localStorage.setItem('theme',theme)
+  },[theme])
+  
+  
+  useEffect(()=>{
+    const darkMode=window.matchMedia('(prefers-color-scheme: dark)').matches;
+    setTheme(theme || (darkMode) ? 'dark' : 'light')
+  },[])
   return (
     <div className="flex justify-between items-center px-4 sm:px-12 lg:px-24 xl:px-40 py-4 sticky top-0 z-20 backdrop-blur-xl font-medium bg-white/50 dark:bg-gray-900/70">
       <img
@@ -47,7 +64,7 @@ function NavBar( {theme, setTheme }) {
           <img src={theme==='dark' ? assets.menu_icon_dark : assets.menu_icon} alt="" onClick={()=> setSideBar(true)} className="w-8 sm:hidden"/>
           
             <button>
-              {theme ==='dark' ? (<img onClick={()=> setTheme('light')} src={assets.sun_icon} className="size-8.5 p-1.5 border border-gray-500 rounded-full"/>) : (<img onClick={()=> setTheme('dark')} src={assets.moon_icon_icon} className="size-8.5 p-1.5 border border-gray-500 rounded-full"/>)}
+              {theme ==='dark' ? (<img onClick={()=> setTheme('light')} src={assets.sun_icon} className="size-8.5 p-1.5 border border-gray-500 rounded-full"/>) : (<img onClick={()=> setTheme('dark')} src={assets.moon_icon} className="size-8.5 p-1.5 border border-gray-500 rounded-full"/>)}
             </button>
             <a onClick={()=>setSideBar(false)}
               className="text-sm max-sm:hidden flex items-center gap-2 bg-primary text-white px-6 py-2 rounded-full cursor-pointer hover:scale-103 transition-all"
