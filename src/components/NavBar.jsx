@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "../css/navbar.css";
 import assets from "../assets/assets";
 
 function NavBar( {theme, setTheme }) {
