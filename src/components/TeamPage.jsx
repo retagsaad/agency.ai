@@ -1,7 +1,7 @@
 import React from "react";
 import assets from "../assets/assets";
 import { teamData } from "../assets/assets";
-function teamPage() {
+function TeamPage() {
   return (
     <div
       id="team"
@@ -14,7 +14,7 @@ function teamPage() {
         </p>
         </div>
         <div className="grid grid-cols-2 ms:grid-cols-3 xl:grid-cols-4 gap-5">
-        {teamData.map(({name,image,title ,index})=>(
+        {teamData.map(({name,image,title },index)=>(
           <div key={index} className="flex max-sm:flex-col items-center gap-5 p-4 rounded-xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-900 shadow-gray-100 dark:shadow-white/5 hover:scale-103 transition-all duration-400">
             <img src={image} className="w-12 h-12 rounded-full" />
             <div className="flex-1">
@@ -30,4 +30,4 @@ function teamPage() {
   );
 }
 
-export default teamPage;
+export default TeamPage;

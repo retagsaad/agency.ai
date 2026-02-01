@@ -21,7 +21,7 @@ function NavBar( {theme, setTheme }) {
     {
       id: 4,
       title: "Contact Us",
-      href: "contact",
+      href: "#contact",
     },
   ];
 
