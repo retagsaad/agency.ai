@@ -55,14 +55,20 @@ function HelpPage() {
       // className="pointer-events-none blur-2xl rounded-full bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 w-[300px] h-[300px] absolute z-0 transition-opacity duration-500 mix-blend-lighten opacity-70"
         // style={{top:positi1on.y - 50, left:position.x - 150}}
       >
-        <div className="flex flex-col md:grid grid-cols-2" 
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {services.map(({ id, title, description, icon }) => (
             <div
               key={id}
               // className="relative overflow-hidden max-w-lg m-2 sm:m-4 rounded-xl border border-gray-200 dark:border-gray-700 shadow-2xl shadow-gray-100 dark:shadow-white/10"
-              className="flex items-center gap-10 p-8 hover:p-7.5 hover:m-0.5 transition-all rounded-[10px] bg-white dark:bg-gray-900 z-10 relative"
-            >
+className="
+flex items-center gap-4
+p-6
+bg-white dark:bg-gray-900
+rounded-2xl
+shadow-[0_10px_40px_rgba(0,0,0,0.06)]
+hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)]
+transition-all duration-300
+"            >
               <div className="bg-gray-100 dark:bg-gray-700 rounded-full">
                 <img
                   src={icon}
