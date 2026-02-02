@@ -19,7 +19,7 @@ const [theme,setTheme]=useState(localStorage.getItem('theme') ? localStorage.get
      <LatestWork/>
      <TeamPage/>
      <Connect/>
-     <Footer/>
+     <Footer theme={theme}/>
     </div>
   )
 }
