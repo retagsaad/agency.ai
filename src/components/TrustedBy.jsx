@@ -1,4 +1,3 @@
-import React from 'react'
 import {company_logos} from '../assets/assets'
 function TrustedBy() {
   return (
